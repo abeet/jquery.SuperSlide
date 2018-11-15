@@ -49,6 +49,9 @@
       var slider = $(this);
       if (options === 'destroy') {
         var refs = slider.data('slider');
+        if(!refs){
+          return
+        }
         if (refs.$_tar) {
           refs.$_tar.stop(true, true)
         }
