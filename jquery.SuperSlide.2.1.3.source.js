@@ -102,7 +102,7 @@
         $conBox: conBox,
         $tarObj: tarObj,
         $playState: playState,
-        conBoxStyle: $conBox.attr('style')
+        conBoxStyle: conBox.attr('style') || ''
       }
       slider.data('slider', refs)
 
