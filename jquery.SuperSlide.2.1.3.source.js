@@ -49,7 +49,7 @@
       var slider = $(this);
       if (options === 'destroy') {
         var refs = slider.data('slider');
-        if(!refs){
+        if (!refs) {
           return
         }
         if (refs.$_tar) {
@@ -59,6 +59,11 @@
           refs.$conBox.children().stop(true, true);
           $.cleanData(refs.$conBox.children())
           refs.$conBox.stop(true, true)
+          refs.$conBox.attr('style', refs.conBoxStyle)
+          if (refs.$conBox.parent().hasClass('tempWrap')) {
+            refs.$conBox.unwrap()
+          }
+
         }
         $.cleanData(refs.$navObj.find("*"));
         for (var k in refs) {
@@ -97,6 +102,7 @@
         $conBox: conBox,
         $tarObj: tarObj,
         $playState: playState,
+        conBoxStyle: $conBox.attr('style')
       }
       slider.data('slider', refs)
 
