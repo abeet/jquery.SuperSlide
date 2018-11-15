@@ -48,7 +48,7 @@
     return this.each(function () {
       var slider = $(this);
       if (options === 'destroy') {
-        var refs = slider.data('slider');
+        var refs = slider.data('slide');
         if (!refs) {
           return
         }
@@ -104,7 +104,7 @@
         $playState: playState,
         conBoxStyle: conBox.attr('style') || ''
       }
-      slider.data('slider', refs)
+      slider.data('slide', refs)
 
       /*字符串转换*/
       var index = parseInt(opts.defaultIndex);
